@@ -4,11 +4,11 @@ const userSurname = prompt("Яке Ваше прізвище?");
 
 const favoriteNumber = prompt("Яке Ваше улюблене число?");
 
-const userData = ` "Вітаю, ${userName} ${userSurname}! Ваше улюблене число - ${favoriteNumber}`;
+const userData = `Вітаю, ${userName} ${userSurname}! Ваше улюблене число - ${favoriteNumber}`;
 console.log(userData);
 alert(userData);
 
-let fistNumber = +prompt("Введіть перше число");
+let firstNumber = +prompt("Введіть перше число");
 
 let secondNumber = +prompt("Введіть друге число");
 
@@ -31,13 +31,13 @@ const currentYear = new Date().getFullYear();
 let userAge = currentYear - userBirthday;
 console.log(userAge);
 
-let nuberOne = 10;
+let numberOne = 10;
 
-let nuberTwo = 5;
+let numberTwo = 5;
 
-let rsult = nuberOne / nuberTwo;
+let result = numberOne / numberTwo;
 
-let resultToUser = `"Остача від ділення числа ${nuberOne} на число ${nuberTwo} рівна ${rsult}"`;
+let resultToUser = `Остача від ділення числа ${numberOne} на число ${numberTwo} рівна ${result}`;
 console.log(resultToUser);
 
 const anyNumber = +prompt("Введіть будь-яке число");
