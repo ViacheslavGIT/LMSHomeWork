@@ -42,5 +42,5 @@ console.log(resultToUser);
 
 const anyNumber = +prompt("Введіть будь-яке число");
 
-let evenNumber = anyNumber % 2 == 0;
-console.log(evenNumber);
+let isEvenNumber = anyNumber % 2 === 0;
+console.log(isEevenNumber);
