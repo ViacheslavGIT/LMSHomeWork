@@ -43,4 +43,4 @@ console.log(resultToUser);
 const anyNumber = +prompt("Введіть будь-яке число");
 
 let isEvenNumber = anyNumber % 2 === 0;
-console.log(isEevenNumber);
+console.log(isEvenNumber);
