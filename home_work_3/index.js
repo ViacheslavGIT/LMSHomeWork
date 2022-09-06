@@ -12,16 +12,16 @@ let firstNumber = +prompt("Введіть перше число");
 
 let secondNumber = +prompt("Введіть друге число");
 
-let plus = fistNumber + secondNumber;
+let plus = firstNumber + secondNumber;
 console.log(plus);
 
-let minus = fistNumber - secondNumber;
+let minus = firstNumber - secondNumber;
 console.log(minus);
 
-let divide = fistNumber / secondNumber;
+let divide = firstNumber / secondNumber;
 console.log(divide);
 
-let multiplied = fistNumber * secondNumber;
+let multiplied = firstNumber * secondNumber;
 console.log(multiplied);
 
 const userBirthday = prompt("В якому році Ви народились?");
@@ -35,7 +35,7 @@ let numberOne = 10;
 
 let numberTwo = 5;
 
-let result = numberOne / numberTwo;
+let result = numberOne % numberTwo;
 
 let resultToUser = `Остача від ділення числа ${numberOne} на число ${numberTwo} рівна ${result}`;
 console.log(resultToUser);
