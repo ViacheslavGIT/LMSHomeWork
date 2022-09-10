@@ -16,21 +16,21 @@ if (userLogin !== "admin" && userPassword !== "12pass33210") {
 // №3
 const moneyAmount = +prompt("Скільки гошей на кармані?");
 
-const cherryPrice = 21;
-const carrotPrice = 8;
-const potatoPrice = 12;
-const cherry = "черешня";
-const carrot = "морква";
-const potato = "картопля";
+const CHERRY_PRICE = 21;
+const CARROT_PRICE = 8;
+const POTATO_PRICE = 12;
+const CHERRY = "черешня";
+const CARROT = "морква";
+const POTATO = "картопля";
 
 console.log(
-  `Черешня: ${cherryPrice} грн, Морква: ${carrotPrice} грн, Картопля: ${potatoPrice} грн`
+  `Черешня: ${CHERRY_PRICE} грн, Морква: ${CARROT_PRICE} грн, Картопля: ${POTATO_PRICE} грн`
 );
 
 if (
-  moneyAmount < cherryPrice &&
-  moneyAmount < carrotPrice &&
-  moneyAmount < potatoPrice
+  moneyAmount < CHERRY_PRICE &&
+  moneyAmount < CARROT_PRICE &&
+  moneyAmount < POTATO_PRICE
 ) {
   console.log(
     "Нажаль, у Вас недостатньо коштів для купівлі хоча б 1кг будь-якого продукту"
@@ -39,34 +39,34 @@ if (
   const purchase = prompt("Що надо?").toLowerCase();
   const notEnoghtMoneyMessage = `У вас недостатньо коштів, для купівлі хоча б 1кг ${purchase}`;
 
-  if (purchase !== cherry && purchase !== carrot && purchase !== potato) {
+  if (purchase !== CHERRY && purchase !== CARROT && purchase !== POTATO) {
     console.log("Такого продукту нема");
-  } else if (purchase === cherry) {
-    if (moneyAmount >= cherryPrice) {
+  } else if (purchase === CHERRY) {
+    if (moneyAmount >= CHERRY_PRICE) {
       console.log(
         `За ${moneyAmount} грн. Ви можете придбати ${Math.trunc(
-          moneyAmount / cherryPrice
-        )}кг даного продукту. У Вас залишиться ${moneyAmount % cherryPrice}грн`
+          moneyAmount / CHERRY_PRICE
+        )}кг даного продукту. У Вас залишиться ${moneyAmount % CHERRY_PRICE}грн`
       );
     } else {
       console.log(notEnoghtMoneyMessage);
     }
-  } else if (purchase === carrot) {
-    if (moneyAmount >= carrotPrice) {
+  } else if (purchase === CARROT) {
+    if (moneyAmount >= CARROT_PRICE) {
       console.log(
         `За ${moneyAmount} грн. Ви можете придбати ${Math.trunc(
-          moneyAmount / carrotPrice
-        )}кг даного продукту. У Вас залишиться ${moneyAmount % carrotPrice}грн`
+          moneyAmount / CARROT_PRICE
+        )}кг даного продукту. У Вас залишиться ${moneyAmount % CARROT_PRICE}грн`
       );
     } else {
       console.log(notEnoghtMoneyMessage);
     }
-  } else if (purchase === potato) {
-    if (moneyAmount >= potatoPrice) {
+  } else if (purchase === POTATO) {
+    if (moneyAmount >= POTATO_PRICE) {
       console.log(
         `За ${moneyAmount} грн. Ви можете придбати ${Math.trunc(
-          moneyAmount / potatoPrice
-        )}кг даного продукту. У Вас залишиться ${moneyAmount % potatoPrice}грн`
+          moneyAmount / POTATO_PRICE
+        )}кг даного продукту. У Вас залишиться ${moneyAmount % POTATO_PRICE}грн`
       );
     } else {
       console.log(notEnoghtMoneyMessage);
