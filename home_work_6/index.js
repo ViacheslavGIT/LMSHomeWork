@@ -1,7 +1,7 @@
 const checkIfValueNotValid = (variable) => {
   // undefined == null -> true
   // undefined === null -> false
-  if (variable == null || isNaN(variable)) {
+  if (variable === undefined || variable === null || isNaN(variable)) {
     return true;
   }
   return false;
@@ -18,7 +18,7 @@ const showMinNumber = (num1, num2, num3, num4) => {
     return "Введіть числа для обробки";
   }
 };
-console.log(showMinNumber());
+console.log(showMinNumber(2));
 
 /*
 2.Написати функцію, яка приймає 2 аргументи та шукає найбільший спільний дільник для них.
