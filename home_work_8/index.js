@@ -84,12 +84,28 @@ const createNewProduct = () => {
     productPrice: 0,
     productQuantity: 0,
   };
-  for (const [key] of Object.entries(NEW_PRODUCT)) {
-    const value = prompt([key]);
+
+  //   for (const [key] of Object.entries(NEW_PRODUCT)) {
+  //     const value = prompt([key]);
+  //     if (!validateValue(value) && key === "productName") {
+  //       NEW_PRODUCT[key] = EMPTY_VALUE;
+  //     } else if (key === "productPrice" || key === "productQuantity") {
+  //       NEW_PRODUCT[key] = Number(value) ? Number(value) : 0;
+  //     } else {
+  //       NEW_PRODUCT[key] = value;
+  //     }
+  //   }
+  //   productsList.push(NEW_PRODUCT);
+  //   return productsList;
+  // };
+
+  for (let key in NEW_PRODUCT) {
+    const value = prompt(key);
+
     if (!validateValue(value) && key === "productName") {
       NEW_PRODUCT[key] = EMPTY_VALUE;
     } else if (key === "productPrice" || key === "productQuantity") {
-      NEW_PRODUCT[key] = Number(value) ? Number(value) : 0;
+      NEW_PRODUCT[key] = Math.abs(value) ? Math.abs(value) : 0;
     } else {
       NEW_PRODUCT[key] = value;
     }
@@ -97,25 +113,8 @@ const createNewProduct = () => {
   productsList.push(NEW_PRODUCT);
   return productsList;
 };
-console.log(createNewProduct());
-
+createNewProduct();
 console.log(productsList);
-
-/*
-  for (let key of NEW_PRODUCT) {
-    const value = prompt(key);
-    if (!validateValue(value) && key === "productName") {
-      NEW_PRODUCT.key = EMPTY_VALUE;
-    } else if (key === "productPrice" || key === "productQuantity") {
-      NEW_PRODUCT.key = Number(value) ? Number(value) : 0;
-    } else {
-      NEW_PRODUCT.key = value;
-    }
-  }
-};
- Uncaught TypeError: NEW_PRODUCT is not iterable
- at createNewProduct
- */
 
 // 3.6 Створити функцію, яка повинна видаляти конкретний продукт із існуючий масиву продуктів
 const deleteProduct = () => {
@@ -124,12 +123,13 @@ const deleteProduct = () => {
     const indexOfElement = productsList.findIndex(
       (el) => el.productName === productValue
     );
+    if (indexOfElement === -1) return "Can't find product";
     productsList.splice(indexOfElement, 1);
     return productsList;
-  } else return "It is done";
+  } else return "As you wish";
 };
 
-console.log(deleteProduct());
+deleteProduct();
 
 //4.0 Дано масив [16, -3, 54,-4, 72,-56, 47, -12, 4, -16, 25, -37, 46, 4, -51, 27, -8, 4, -54, 76, -4, 12, 6, -35]
 const arrayNumbers = [
@@ -149,7 +149,7 @@ const indexMinElement = arrayNumbers.findIndex(
   (element) => element === minElementValue
 );
 console.log(
-  `${minElementValue} the smallest element under the number is: ${indexMinElement}`
+  `${minElementValue} the smallest element, item number is: ${indexMinElement}`
 );
 
 //4.3 Знайти максимальний елемент масиву та його порядковий номер
@@ -158,7 +158,7 @@ const indexMaxElement = arrayNumbers.findIndex(
   (element) => element === maxElementValue
 );
 console.log(
-  `${maxElementValue} the largest element under the number is: ${indexMaxElement}`
+  `${maxElementValue} the largest element, item number is: ${indexMaxElement}`
 );
 
 //4.4 Визначити кількість негативних елементів.
@@ -173,7 +173,7 @@ console.log(`Quantity of not even numbers is: ${arrayNotEvenNumbers.length}`);
 
 //4.6 Знайти суму парних позитивних елементів
 const arrayEvenNumbers = arrayPositiveNumbers.filter(
-  (namber) => namber % 2 === 0
+  (number) => number % 2 === 0
 );
 const totalAmountEvenNumbers = arrayEvenNumbers.reduce(
   (sum, number) => sum + number
@@ -182,7 +182,7 @@ console.log(`Sum of even elements: ${totalAmountEvenNumbers}`);
 
 //4.7 Знайти добуток позитивних елементів.
 const multiplyEvenNumbers = arrayPositiveNumbers.reduce(
-  (number1, namber2) => number1 * namber2,
+  (number1, number2) => number1 * number2,
   1
 );
 console.log(`Multiply positive elements is: ${multiplyEvenNumbers}`);
