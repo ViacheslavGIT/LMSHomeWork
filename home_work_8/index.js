@@ -100,6 +100,7 @@ const createNewProduct = () => {
 console.log(createNewProduct());
 
 console.log(productsList);
+
 /*
   for (let key of NEW_PRODUCT) {
     const value = prompt(key);
@@ -113,20 +114,17 @@ console.log(productsList);
   }
 };
  Uncaught TypeError: NEW_PRODUCT is not iterable
- at createNewProduct (index.js:101:19)
- at index.js:112:13
- 
- так як ви виправили в мене не виходить
+ at createNewProduct
  */
 
 // 3.6 Створити функцію, яка повинна видаляти конкретний продукт із існуючий масиву продуктів
 const deleteProduct = () => {
   const productValue = prompt("Enter product name to delete");
   if (validateValue(productValue)) {
-    const indexOfElem = productsList.findIndex(
+    const indexOfElement = productsList.findIndex(
       (el) => el.productName === productValue
     );
-    productsList.splice(indexOfElem, 1);
+    productsList.splice(indexOfElement, 1);
     return productsList;
   } else return "It is done";
 };
@@ -134,20 +132,20 @@ const deleteProduct = () => {
 console.log(deleteProduct());
 
 //4.0 Дано масив [16, -3, 54,-4, 72,-56, 47, -12, 4, -16, 25, -37, 46, 4, -51, 27, -8, 4, -54, 76, -4, 12, 6, -35]
-const numberarray = [
+const arrayNumbers = [
   16, -3, 54, -4, -72, -56, 47, -12, 4, -16, 25, -37, 46, 4, -51, 27, -8, 4,
   -54, 76, -4, 12, 6, -35,
 ];
 
 // 4.1 Знайти суму та кількість позитивних елементів.
 
-const arrayPositiveNumbers = numberarray.filter((number) => number >= 0);
+const arrayPositiveNumbers = arrayNumbers.filter((number) => number >= 0);
 const totalAmount = arrayPositiveNumbers.reduce((sum, number) => sum + number);
 console.log(`Sum ${arrayPositiveNumbers.length} elements is: ${totalAmount}`);
 
 //4.2 Знайти мінімальний елемент масиву та його порядковий номер
-const minElementValue = Math.min(...numberarray);
-const indexMinElement = numberarray.findIndex(
+const minElementValue = Math.min(...arrayNumbers);
+const indexMinElement = arrayNumbers.findIndex(
   (element) => element === minElementValue
 );
 console.log(
@@ -155,8 +153,8 @@ console.log(
 );
 
 //4.3 Знайти максимальний елемент масиву та його порядковий номер
-const maxElementValue = Math.max(...numberarray);
-const indexMaxElement = numberarray.findIndex(
+const maxElementValue = Math.max(...arrayNumbers);
+const indexMaxElement = arrayNumbers.findIndex(
   (element) => element === maxElementValue
 );
 console.log(
@@ -164,7 +162,7 @@ console.log(
 );
 
 //4.4 Визначити кількість негативних елементів.
-const arrayNegativeNumbers = numberarray.filter((number) => number < 0);
+const arrayNegativeNumbers = arrayNumbers.filter((number) => number < 0);
 console.log(`Quantity of negative numbers is: ${arrayNegativeNumbers.length}`);
 
 //4.5 Знайти кількість непарних позитивних елементів
