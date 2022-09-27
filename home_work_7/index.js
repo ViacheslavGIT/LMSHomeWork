@@ -94,7 +94,7 @@ const STUDENT = {
   course: 1,
   city: "Dnipro",
   greeting: function () {
-    return console.log("Hi. everyone!");
+    return console.log("Hi everyone!");
   },
   addHomework: function () {
     return console.log("Sending my howework... Please, wait");
@@ -110,17 +110,15 @@ STUDENT.addHomework();
 
 function isEmpty(value) {
   if (!validateValue(value) || typeof value !== "object") {
-    return "false value";
-  }
-  if (Object.keys(value).length === 0) {
-    return "true";
+    return "Data is corrupted or invalid format";
   } else {
-    return "false";
+    return Object.keys(value).length === 0 ? true : false;
   }
 }
 isEmpty();
-//const testObj = {};
-// console.log(isEmpty());
+// const testObj = {}
+
+// console.log(isEmpty(testObj));
 
 /*
 6. Створити об’єкт для зберігання виручки команди продавців, наприклад:
