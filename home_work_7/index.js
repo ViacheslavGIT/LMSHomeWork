@@ -53,8 +53,8 @@ const createNewUser = () => {
     age: "",
   };
 
-  for (const [key] of Object.entries(USER)) {
-    let result = prompt([key]);
+  for (let key in USER) {
+    const result = prompt(key);
     if (result === null || result === "") {
       USER[key] = EMPTY_VALUE;
     } else {
@@ -74,7 +74,7 @@ const newUser = createNewUser();
 */
 
 const editUserData = (object, key, value) => {
-  return (object[key] = value);
+  return object[key] = value;
 };
 
 editUserData(newUser, "city", "Chuguiv");
@@ -143,8 +143,8 @@ const SALES_TEAM_REVENUE = {
 
 const getSumSalesmensRevenue = (salesmen) => {
   let sumRevenue = 0;
-  for (let Revenue of Object.values(salesmen)) {
-    sumRevenue += Revenue;
+  for (let revenue of Object.values(salesmen)) {
+    sumRevenue += revenue;
   }
   return `The total revenue is ${sumRevenue} UAH`;
 };
