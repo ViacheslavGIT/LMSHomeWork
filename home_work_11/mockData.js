@@ -96,7 +96,7 @@ export const mockDataArray = [
     productName: "cucumber",
     productData: {
       weight: 100,
-      certificate: true,
+      certificate: false,
       dateOfExpiry: "24/10/2022",
       sugarFree: true,
     },
@@ -144,7 +144,7 @@ export const mockDataArray = [
     productName: "melon",
     productData: {
       weight: 100,
-      certificate: false,
+      certificate: true,
       dateOfExpiry: "21/10/2022",
       sugarFree: true,
     },

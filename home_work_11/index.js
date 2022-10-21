@@ -3,7 +3,7 @@ import { mockDataArray } from "./mockData.js";
 const root = document.createElement("div");
 
 const containerValueOfProducts = document.createElement("div");
-containerValueOfProducts.classList.add("value-container"); /// from value-container to container
+containerValueOfProducts.classList.add("container");
 
 const productList = document.createElement("ul");
 productList.classList.add("product-list");
@@ -33,13 +33,13 @@ function renderProductsListItem(
   productProvider
 ) {
   return `<div class = "product-item">
-    <span style="color:red">${certificate ? "" : "!"}</span>
-    <span class = "product-name"> ${productName}</span>
+    <span class = "certificate-attation">${certificate ? "" : "!"}</span>
+    <span class = "product-name">${productName}</span>
     <span class = "product-price">: for ${weight} grams, the price ${productPrice} UAH</span>
-    <img style = "width:30px; margin-left: 6px" src = "${productCountry}" alt = "imageFlag">
+    <img style = "width:30px; margin-left: 6px" src = "${productCountry}" alt = "image-flag">
     <span class="show-more">show more</span>
   </div>
-  <div id=${productName}  class = "sd" style="display: none;">
+  <div id=${productName} style="display: none;">
     Date of expiry: ${dateOfExpiry}; sugar free: ${sugarFree}; product provider: ${productProvider}
   </div>`;
 }
@@ -97,9 +97,9 @@ function renderValueOfProducts(
   averagePriceOfProducts,
   mostExpensiveProduct
 ) {
-  return `<span class="red">Total price: ${totalPrice} UAH</span>
-  <span class="blue"> Average price of products: ${averagePriceOfProducts} UAH</span>
-  <span class="green"> Most expensive product: ${mostExpensiveProduct} </span>`;
+  return `<span>Total price: ${totalPrice} UAH</span>
+  <span>Average price of products: ${averagePriceOfProducts} UAH</span>
+  <span>Most expensive product: ${mostExpensiveProduct}</span>`;
 }
 containerValueOfProducts.innerHTML = `${renderValueOfProducts(
   totalPrice,
