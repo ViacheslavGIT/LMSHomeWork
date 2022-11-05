@@ -38,7 +38,7 @@ buttonStart.addEventListener("click", () => {
   if (Number(inputField.value) && Number(inputField.value) > 0) {
     setTimer();
   } else {
-    timerField.innerHTML = "enter value >";
+    timerField.innerHTML = "enter value > 0";
   }
 });
 
