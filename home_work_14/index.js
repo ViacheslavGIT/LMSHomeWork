@@ -6,9 +6,7 @@ const buttonCalculateCentury = document.querySelector("#calc-century");
 
 const getCentury = () =>
   inputYear.value && inputYear.value > 0
-    ? (outputCentury.innerHTML = `${
-        1 + Math.trunc(inputYear.value / 100)
-      }th`)
+    ? (outputCentury.innerHTML = `${1 + Math.trunc(inputYear.value / 100)}th`)
     : (outputCentury.innerHTML = "Enter year");
 
 buttonCalculateCentury.addEventListener("click", getCentury);
@@ -105,10 +103,7 @@ const transformToPhoneNumber = () => {
   const value = String(Math.abs(inputStringToPhoneNumber.value));
 
   if (value && value.length === 10) {
-    const arrayNumbers = value.split("");
-    const phoneNumber = arrayNumbers
-      .join("")
-      .replace(/(...)(...)(.*)/, "($1) $2 $3");
+    const phoneNumber = value.replace(/(...)(...)(.*)/, "($1) $2 $3");
     outputStringToPhoneNumber.innerHTML = phoneNumber;
   } else {
     outputStringToPhoneNumber.innerHTML = "Enter 10 symbols";
