@@ -100,8 +100,7 @@ const buttonFormatStringToPhoneNumber = document.querySelector(
 );
 
 const transformToPhoneNumber = () => {
-  const value = String(Math.abs(inputStringToPhoneNumber.value));
-
+  const value = String(Math.trunc(Math.abs(inputStringToPhoneNumber.value)));
   if (value && value.length === 10) {
     const phoneNumber = value.replace(/(...)(...)(.*)/, "($1) $2 $3");
     outputStringToPhoneNumber.innerHTML = phoneNumber;
