@@ -4,11 +4,26 @@ const outputCentury = document.querySelector("#result-calc-century");
 const inputYear = document.querySelector("#year");
 const buttonCalculateCentury = document.querySelector("#calc-century");
 
-const getCentury = () =>
-  inputYear.value && inputYear.value > 0
-    ? (outputCentury.innerHTML = `${1 + Math.trunc(inputYear.value / 100)}th`)
-    : (outputCentury.innerHTML = "Enter year");
-
+const getCentury = () => {
+  let cutback;
+  if (inputYear.value && inputYear.value > 0) {
+    const century = 1 + Math.trunc(inputYear.value / 100);
+    if (century > 10 && [11, 12, 13, 14].includes(century % 100)) {
+      cutback = "th";
+    } else if (century % 10 === 1) {
+      cutback = "st";
+    } else if (century % 10 === 2) {
+      cutback = "nd";
+    } else if (century % 10 === 3) {
+      cutback = "rd";
+    } else {
+      cutback = "th";
+    }
+    outputCentury.innerHTML = `${century}${cutback}`;
+  } else {
+    outputCentury.innerHTML = "Enter year";
+  }
+};
 buttonCalculateCentury.addEventListener("click", getCentury);
 
 //4
@@ -99,16 +114,29 @@ const buttonFormatStringToPhoneNumber = document.querySelector(
   "#calc-transform-to-phone-number"
 );
 
-const transformToPhoneNumber = () => {
-  const value = String(Math.trunc(Math.abs(inputStringToPhoneNumber.value)));
+const phoneArray = [];
+
+inputStringToPhoneNumber.addEventListener("input", (event) => {
+  const element = event.data;
+  if (element && !isNaN(element)) {
+    phoneArray.push(element);
+  }
+  if (!element) {
+    phoneArray.pop();
+  }
+});
+
+const transformToPhoneNumber = (value) => {
   if (value && value.length === 10) {
-    const phoneNumber = value.replace(/(...)(...)(.*)/, "($1) $2 $3");
+    const phoneNumber = value.join("").replace(/(...)(...)(.*)/, "($1) $2-$3");
     outputStringToPhoneNumber.innerHTML = phoneNumber;
   } else {
-    outputStringToPhoneNumber.innerHTML = "Enter 10 symbols";
+    outputStringToPhoneNumber.innerHTML = "Enter 10 numbers";
   }
+  phoneArray.length = 0;
+  inputStringToPhoneNumber.value = "";
 };
-buttonFormatStringToPhoneNumber.addEventListener(
-  "click",
-  transformToPhoneNumber
+
+buttonFormatStringToPhoneNumber.addEventListener("click", () =>
+  transformToPhoneNumber(phoneArray)
 );
