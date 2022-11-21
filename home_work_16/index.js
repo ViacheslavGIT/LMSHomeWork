@@ -1,5 +1,5 @@
 const apiKey = "d3890f0";
-
+const inputContainer = document.querySelector("#input-container");
 const searchResultArea = document.querySelector("#films");
 const filmDetails = document.querySelector("#film-details");
 const pagesContainer = document.querySelector("#pages");
@@ -7,18 +7,22 @@ const btnSearch = document.querySelector("#search");
 const inputFilmTitle = document.querySelector("#input-film-title");
 const filmsWrapper = document.querySelector("#films-wrapper");
 const statusMassage = document.createElement("span");
-const nextPage = document.createElement("span");
-const prevPage = document.createElement("span");
-
-let sessionStorage = window.sessionStorage;
-// sessionStorage.setItem("currentPage", "1");
+const nextPage = document.createElement("button");
+nextPage.id = "next";
+const prevPage = document.createElement("button");
+prevPage.id = "prev";
+let currentPage = 1;
 
 pagesContainer.classList.add("pagies-container");
 
 statusMassage.classList.add("status-massage");
 filmsWrapper.prepend(statusMassage);
-
-btnSearch.addEventListener("click", response);
+inputContainer.addEventListener("keydown", (e) => {
+  if (e.code === "Enter") {
+    getSearchResult();
+  }
+});
+btnSearch.addEventListener("click", getSearchResult);
 
 const renderFilmListToHTML = (result, pageId) => {
   if (result.Response === "False") {
@@ -67,7 +71,7 @@ const renderFilmListToHTML = (result, pageId) => {
     });
   }
 };
-function response() {
+function getSearchResult() {
   fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${inputFilmTitle.value}`)
     .then((result) => result.json())
     .then(renderFilmListToHTML);
@@ -98,6 +102,7 @@ const renderDetails = (result) => {
     }
   });
 };
+
 function handlePage(page) {
   fetch(
     `http://www.omdbapi.com/?apikey=${apiKey}&s=${inputFilmTitle.value}&page=${page}`
@@ -107,6 +112,7 @@ function handlePage(page) {
 }
 
 const renderPages = (totalPages) => {
+  if (totalPages === 1) return;
   const pagesLength = totalPages > 100 ? 100 : totalPages;
   const pageArray = [];
 
@@ -114,38 +120,34 @@ const renderPages = (totalPages) => {
     pageArray.push(i);
   }
 
-  pageArray.slice(0, 15).map((page) => {
+  const fixArrayLength = pageArray.slice(0, 15);
+  fixArrayLength.map((page) => {
     const pageItem = document.createElement("span");
     pageItem.classList.add("page");
     pageItem.setAttribute("id", page);
     pageItem.innerHTML = page;
-
-    pageItem.addEventListener("click", () => {
-      handlePage(page);
-    });
-
     pagesContainer.appendChild(pageItem);
   });
-  const a = document.querySelectorAll(".page");
-  console.log(a);
-  let carPage = a[0];
-  console.log(carPage)
-  prevPage.addEventListener("click", () => {
-    handlePage(+carPage.id - 1);
-  });
-  nextPage.addEventListener("click", () => {
-    handlePage(+carPage.id + 1);
+  pagesContainer.addEventListener("click", (e) => {
+    if (e.target.id === "next" && +currentPage === fixArrayLength.length) {
+      return;
+    } else if (e.target.id === "next") {
+      currentPage++;
+      handlePage(currentPage);
+    } else if (e.target.id === "prev" && +currentPage === 1) {
+      return;
+    } else if (e.target.id === "prev") {
+      currentPage--;
+      handlePage(currentPage);
+    } else {
+      currentPage = e.target.id;
+      handlePage(e.target.id);
+    }
   });
 
   prevPage.innerHTML = "<";
-  nextPage.innerHTML = " >";
+  nextPage.innerHTML = ">";
 
   pagesContainer.prepend(prevPage);
   pagesContainer.appendChild(nextPage);
 };
-
-// const renderNavigation = (next, prev) => {
-//   let selectedPage = Number(sessionStorage.getItem("currentPage"));
-//   console.log(selectedPage);
-
-// };
