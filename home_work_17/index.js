@@ -162,7 +162,8 @@ async function loadJSON(value, currentCity) {
   } catch (error) {
     neighborsContainer.innerHTML = "";
     weatherContainer.innerHTML = "";
-    cityInfoContainer.innerHTML = `${error.Message}`;
-    console.log("faild: ", JSON.parse(error));
+    neighborsCity.innerHTML = "";
+    cityInfoContainer.innerHTML = "Something is wrong";
+    console.log(error.message);
   }
 }
