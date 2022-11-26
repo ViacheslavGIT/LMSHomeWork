@@ -139,7 +139,7 @@ const renderdailyForecast = (dailyForecasts, currentCity) => {
     conditionsNightFragment.innerHTML = `Night: ${conditionsNight}`;
   });
 
-  cityInfoContainer.innerHTML = `Weather in <span style="font-size: 100px">${currentCity}</span> for 5 days`;
+  cityInfoContainer.innerHTML = `Weather in ${currentCity} for 5 days`;
   neighborsCity.innerHTML = `Cities near ${currentCity}`;
 };
 
