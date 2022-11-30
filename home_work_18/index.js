@@ -192,7 +192,7 @@ function getSelectedPage(e, length) {
   }
 
   ArrayElementsPage.forEach((el) => {
-    if (currentPage == el.getAttribute("id")) {
+    if (currentPage === +el.getAttribute("id")) {
       el.classList.add("currentPage");
     } else {
       el.classList.remove("currentPage");
