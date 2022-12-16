@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "/LMShomeWork/static/css/main.9e69b541.css",
-    "main.js": "/LMShomeWork/static/js/main.190674a8.js",
-    "static/js/787.7bff15e9.chunk.js": "/LMShomeWork/static/js/787.7bff15e9.chunk.js",
+    "main.css": "/LMShomeWork/static/css/main.8882f8fa.css",
+    "main.js": "/LMShomeWork/static/js/main.7e5a4ebc.js",
+    "static/media/background-item.jpg": "/LMShomeWork/static/media/background-item.943bb28297ba30a12c3b.jpg",
+    "static/media/background.jpg": "/LMShomeWork/static/media/background.bdb5085b585ab96cadff.jpg",
+    "static/media/logo.png": "/LMShomeWork/static/media/logo.d0f0bce11cf58da94d00.png",
     "index.html": "/LMShomeWork/index.html",
-    "main.9e69b541.css.map": "/LMShomeWork/static/css/main.9e69b541.css.map",
-    "main.190674a8.js.map": "/LMShomeWork/static/js/main.190674a8.js.map",
-    "787.7bff15e9.chunk.js.map": "/LMShomeWork/static/js/787.7bff15e9.chunk.js.map"
+    "static/media/plus_circle.svg": "/LMShomeWork/static/media/plus_circle.e30502693cc53340053a5be65475a604.svg",
+    "static/media/minus_circle.svg": "/LMShomeWork/static/media/minus_circle.0aefc02394a867745ae3aff3da4273d9.svg",
+    "main.8882f8fa.css.map": "/LMShomeWork/static/css/main.8882f8fa.css.map",
+    "main.7e5a4ebc.js.map": "/LMShomeWork/static/js/main.7e5a4ebc.js.map"
   },
   "entrypoints": [
-    "static/css/main.9e69b541.css",
-    "static/js/main.190674a8.js"
+    "static/css/main.8882f8fa.css",
+    "static/js/main.7e5a4ebc.js"
   ]
 }
