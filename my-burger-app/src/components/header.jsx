@@ -1,13 +1,17 @@
-const mockData = ['', '', '', '', ''];
+import logo from '../assets/logo.png';
+
+const mockData = ['Home', 'Order', 'FAQ'];
 
 function Header() {
   return (
-    <header id='blog-name-container'>
-      <div id='logo-wraper'>
-        <span id='logo'></span>
+    <header id='app-name-container'>
+      <div id='logo-wrapper'>
+        <span id='logo'>
+          <img src={logo} alt="logo" />
+        </span>
       </div>
       <div id='title-wraper'>
-        <span>Blog name</span>
+        <span className="app-name">Extreme Retro Burgers app</span>
       </div>
       <div id='header-item-wrapper'>
         {mockData.map((link) => (
