@@ -1,18 +1,25 @@
 {
   "files": {
-    "main.css": "/LMShomeWork/static/css/main.8882f8fa.css",
-    "main.js": "/LMShomeWork/static/js/main.7e5a4ebc.js",
+    "main.css": "/LMShomeWork/static/css/main.d80a5a58.css",
+    "main.js": "/LMShomeWork/static/js/main.6bb29d4f.js",
     "static/media/background-item.jpg": "/LMShomeWork/static/media/background-item.943bb28297ba30a12c3b.jpg",
     "static/media/background.jpg": "/LMShomeWork/static/media/background.bdb5085b585ab96cadff.jpg",
     "static/media/logo.png": "/LMShomeWork/static/media/logo.d0f0bce11cf58da94d00.png",
+    "static/media/tomato.png": "/LMShomeWork/static/media/tomato.9a424ff98350405486ba.png",
+    "static/media/meat.png": "/LMShomeWork/static/media/meat.3d78b0430b8d32e2cf08.png",
+    "static/media/salad.png": "/LMShomeWork/static/media/salad.2c60eb4a0f089b4f069e.png",
+    "static/media/up.png": "/LMShomeWork/static/media/up.a6ea117a716dc73f2b83.png",
+    "static/media/onion.png": "/LMShomeWork/static/media/onion.7b0c04cebf06a3c51614.png",
+    "static/media/under.png": "/LMShomeWork/static/media/under.b39af441c8ac839e260d.png",
+    "static/media/pickle.png": "/LMShomeWork/static/media/pickle.6eb155555a63915da792.png",
     "index.html": "/LMShomeWork/index.html",
     "static/media/plus_circle.svg": "/LMShomeWork/static/media/plus_circle.e30502693cc53340053a5be65475a604.svg",
     "static/media/minus_circle.svg": "/LMShomeWork/static/media/minus_circle.0aefc02394a867745ae3aff3da4273d9.svg",
-    "main.8882f8fa.css.map": "/LMShomeWork/static/css/main.8882f8fa.css.map",
-    "main.7e5a4ebc.js.map": "/LMShomeWork/static/js/main.7e5a4ebc.js.map"
+    "main.d80a5a58.css.map": "/LMShomeWork/static/css/main.d80a5a58.css.map",
+    "main.6bb29d4f.js.map": "/LMShomeWork/static/js/main.6bb29d4f.js.map"
   },
   "entrypoints": [
-    "static/css/main.8882f8fa.css",
-    "static/js/main.7e5a4ebc.js"
+    "static/css/main.d80a5a58.css",
+    "static/js/main.6bb29d4f.js"
   ]
 }
