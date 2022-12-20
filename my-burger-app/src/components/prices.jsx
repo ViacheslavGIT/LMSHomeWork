@@ -6,7 +6,7 @@ const Prices = (props) => {
       <span className='price-header'>Price</span>
       {prices?.map((item) => (
         <span key={item.id} className='price-item'>
-          {item.product} : {item.price} $
+          {item.name} : {item.price} $
         </span>
       ))}
     </div>

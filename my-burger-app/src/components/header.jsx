@@ -14,8 +14,8 @@ function Header() {
         <span className="app-name">Extreme Retro Burgers app</span>
       </div>
       <div id='header-item-wrapper'>
-        {mockData.map((link) => (
-          <span className='header-item'>{link}</span>
+        {mockData.map((link, index) => (
+          <span key={`${index}_${link}`} className='header-item'>{link}</span>
         ))}
       </div>
     </header>

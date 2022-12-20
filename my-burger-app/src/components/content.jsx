@@ -1,51 +1,66 @@
 import { useState, useEffect } from 'react';
 
-import Prices from './prices';
-import Burger from './burger';
-import Controls from './controls';
+import { Prices, Burger, Controls } from './index';
 
 const mockData = [
   {
-    product: 'Bacon',
+    name: 'Tomato',
     price: 0.75,
+    counter: 0,
     id: 1,
   },
   {
-    product: 'Cheese',
+    name: 'Cheese',
     price: 1.9,
+    counter: 0,
     id: 2,
   },
   {
-    product: 'Salad',
+    name: 'Salad',
     price: 1.75,
+    counter: 0,
     id: 3,
   },
   {
-    product: 'Pickle',
+    name: 'Pickle',
     price: 1,
+    counter: 0,
     id: 4,
   },
   {
-    product: 'Meat',
+    name: 'Meat',
     price: 2,
+    counter: 0,
     id: 5,
+  },
+  {
+    name: 'Onion',
+    price: 2,
+    counter: 0,
+    id: 6,
   },
 ];
 
 const ContentPage = () => {
   const [prices, setPrices] = useState([]);
-  const [totalPrice, setTotalPrice] = useState('1.00');
-  const [ifIngredients, setIfIngredients] = useState(false);
+  const [ingredients, setIngredients] = useState(mockData);
+  const [burgerState, setBurgerState] = useState([]);
 
   useEffect(() => {
     setPrices(mockData);
+    setIngredients(mockData);
   }, []);
 
   return (
     <div id='content-wrapper'>
       <Prices prices={prices} />
-      <Burger price={totalPrice} ifIngredients={ifIngredients} />
-      <Controls />
+      <Burger ingredients={ingredients} burgerState={burgerState} />
+      <Controls
+        controlsData={ingredients}
+        setIngredients={setIngredients}
+        burgerState={burgerState}
+        setBurgerState={setBurgerState}
+      />
     </div>
   );
 };
