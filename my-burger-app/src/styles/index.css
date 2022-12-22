@@ -8,6 +8,7 @@ body {
   background-image: url(../assets/background.jpg);
   background-size: cover;
   height: 100vh;
+  position: relative;
 }
 .app-name {
   font-size: 30px;
@@ -32,8 +33,9 @@ body {
   font-weight: 700;
 }
 .header-item:hover {
+  text-shadow: 0px 0px 2px rgb(68, 68, 68);
   cursor: pointer;
-  border-bottom: 2px solid black;
+  border-bottom: 4px solid black;
 }
 
 .price-header {
@@ -58,14 +60,18 @@ body {
   flex-direction: column;
   align-items: center;
   background-image: url(../assets/background-item.jpg);
+  background-size: cover;
   width: 20%;
   font-weight: 700;
   font-size: 16px;
   padding: 27px 20px 0;
   border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .controls-list {
-  margin-top: 27px;
+  margin-top: 7px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,8 +90,23 @@ body {
 
 .counter-btn {
   cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 1px 1px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
-
+.plus:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 1px;
+  left: 1px;
+}
+.minus:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 1px;
+  right: 1px;
+}
 .counter-name {
   min-width: 52px;
   display: flex;
@@ -105,10 +126,14 @@ body {
   flex-direction: column;
   align-items: center;
   background-image: url(../assets/background-item.jpg);
+  background-size: cover;
   margin-right: 67px;
   width: 20%;
   padding: 27px 20px 0;
   border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 #burger {
   display: flex;
@@ -122,6 +147,9 @@ body {
   padding: 27px 20px 0;
   border-radius: 20px;
   height: 898px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 #content-wrapper {
   margin-top: 19px;
@@ -146,23 +174,58 @@ body {
   height: 120px;
   background-image: url(../assets/background-item.jpg);
   background-size: cover;
+  background-repeat: round;
+  background-position: start;
   padding: 0 28px;
   border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .ingredients-container {
   display: flex;
   flex-direction: column;
-  top: 100px;
+  align-items: center;
 }
 
 .ingredients-container > img {
-  width: 210px;
+  width: 180px;
 }
 
 .burger-view {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   height: 860px;
   padding: 20px 0;
+}
+
+.button-54 {
+  margin-bottom: 20px;
+  font-family: 'Diplomata SC', cursive;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #000;
+  border-radius: 20px;
+  cursor: pointer;
+  background: none;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-54:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  .button-54 {
+    padding: 0.25em 0.75em;
+  }
 }

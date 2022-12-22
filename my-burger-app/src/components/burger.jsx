@@ -9,9 +9,10 @@ import meat from '../assets/meat.png';
 import onion from '../assets/onion.png';
 import pickle from '../assets/pickle.png';
 
-const Burger = ({ ingredients, burgerState }) => {
+const Burger = ({ ingredients, burgerState, active, setActive }) => {
   const [ifIngredients, setIfIngredients] = useState(false);
   const [totalPrice, setTotalPrise] = useState(1);
+  
 
   useEffect(() => {
     const isIngredient = ingredients.find((el) => el.counter > 0);
@@ -30,31 +31,30 @@ const Burger = ({ ingredients, burgerState }) => {
       return total;
     }, 1);
     setTotalPrise(sum.toFixed(2));
-  
+
     return () => setTotalPrise(1);
-  
   }, [ingredients]);
 
   const renderIngredients = () => {
     return burgerState?.map((el) => {
       let ingredientImg = '';
       switch (el) {
-        case 'Tomato':
+        case 'tomato':
           ingredientImg = tomato;
           break;
-        case 'Cheese':
+        case 'cheese':
           ingredientImg = cheese;
           break;
-        case 'Salad':
+        case 'salad':
           ingredientImg = salad;
           break;
-        case 'Meat':
+        case 'meat':
           ingredientImg = meat;
           break;
-        case 'Onion':
+        case 'onion':
           ingredientImg = onion;
           break;
-        case 'Pickle':
+        case 'pickle':
           ingredientImg = pickle;
           break;
         default:
@@ -78,6 +78,8 @@ const Burger = ({ ingredients, burgerState }) => {
           <img src={under} alt='under' />
         </span>
       </div>
+      <button className='button-54' onClick={()=>setActive(!active)}>CHECKOUT</button>
+      
     </div>
   );
 };

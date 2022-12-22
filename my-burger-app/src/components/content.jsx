@@ -1,66 +1,54 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-import { Prices, Burger, Controls } from './index';
-
-const mockData = [
-  {
-    name: 'Tomato',
-    price: 0.75,
-    counter: 0,
-    id: 1,
-  },
-  {
-    name: 'Cheese',
-    price: 1.9,
-    counter: 0,
-    id: 2,
-  },
-  {
-    name: 'Salad',
-    price: 1.75,
-    counter: 0,
-    id: 3,
-  },
-  {
-    name: 'Pickle',
-    price: 1,
-    counter: 0,
-    id: 4,
-  },
-  {
-    name: 'Meat',
-    price: 2,
-    counter: 0,
-    id: 5,
-  },
-  {
-    name: 'Onion',
-    price: 2,
-    counter: 0,
-    id: 6,
-  },
-];
+import { Prices, Burger, Controls, Modal, Loader } from './index';
 
 const ContentPage = () => {
   const [prices, setPrices] = useState([]);
-  const [ingredients, setIngredients] = useState(mockData);
+  const [ingredients, setIngredients] = useState([]);
   const [burgerState, setBurgerState] = useState([]);
+  const [modalActive, setModalActive] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+useEffect(()=>{
+
+},[burgerState])
 
   useEffect(() => {
-    setPrices(mockData);
-    setIngredients(mockData);
+    async function getData() {
+      try {
+        setLoading(true);
+        const response = await axios.get('https://burger-api-xcwp.onrender.com/ingredients');
+        const updatedData = response.data.map((el) => ({ ...el, counter: 0 }));
+        setPrices(updatedData);
+        setIngredients(updatedData);
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    getData();
   }, []);
 
   return (
     <div id='content-wrapper'>
-      <Prices prices={prices} />
-      <Burger ingredients={ingredients} burgerState={burgerState} />
+      <Prices prices={prices} loading={loading} />
+      <Burger
+        ingredients={ingredients}
+        burgerState={burgerState}
+        active={modalActive}
+        setActive={setModalActive}
+      />
       <Controls
         controlsData={ingredients}
         setIngredients={setIngredients}
         burgerState={burgerState}
         setBurgerState={setBurgerState}
+        loading={loading}
       />
+      <Modal active={modalActive} setActive={setModalActive} />
     </div>
   );
 };

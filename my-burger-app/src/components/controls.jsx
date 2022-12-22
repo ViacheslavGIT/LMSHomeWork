@@ -1,7 +1,8 @@
 import minus from '../assets/minus_circle.svg';
 import plus from '../assets/plus_circle.svg';
+import { Loader } from './index';
 
-const Controls = ({ controlsData, setIngredients, burgerState, setBurgerState }) => {
+const Controls = ({ controlsData, setIngredients, burgerState, setBurgerState, loading }) => {
   const handleCounter = (control, name) => {
     if (!control) return;
 
@@ -17,11 +18,13 @@ const Controls = ({ controlsData, setIngredients, burgerState, setBurgerState })
     });
 
     const updateBurgerState = () => {
-      let copiedData = burgerState;
+      let copiedData = [...burgerState];
       const currentIngredient = newData.find((el) => el.name === name);
-      // TODO 
-      if (control === 'plus' && currentIngredient.counter < 6 && burgerState.length < 10) {
+
+      if (currentIngredient.counter !== 5 && control === 'plus' && burgerState.length < 10) {
+        console.log(currentIngredient.counter);
         copiedData.unshift(name);
+        console.log(copiedData);
       } else if (control === 'minus') {
         const index = copiedData.indexOf(name);
         if (index > -1) {
@@ -34,28 +37,45 @@ const Controls = ({ controlsData, setIngredients, burgerState, setBurgerState })
     setBurgerState(updateBurgerState());
     setIngredients(newData);
   };
-
+  const clearAll = () => {
+    const clearData = controlsData.map((el) => {
+      return { ...el, counter: 0 };
+    });
+    setIngredients(clearData);
+    setBurgerState([]);
+  };
   return (
     <div id='controls'>
       <span className='controls-header'>ingredients</span>
       <div className='controls-list'>
-        {controlsData.map((controls) => (
-          <div
-            key={controls.id}
-            className='controls-item'
-            onClick={(e) => handleCounter(e.target.alt, controls.name)}
-          >
-            <div className='counter-wrapper'>
-              <img className='counter-btn' src={minus} alt='minus' />
-              <span className='counter'>{controls.counter}</span>
-              <img className='counter-btn' src={plus} alt='plus' />
-            </div>
-            <div className='counter-name'>
-              <span>{controls.name}</span>
-            </div>
-          </div>
-        ))}
+        {loading ? (
+          <Loader />
+        ) : (
+          <>
+            {controlsData.map((control) => (
+              <div
+                key={control._id}
+                className='controls-item'
+                onClick={(e) => handleCounter(e.target.alt, control.name)}
+              >
+                <div className='counter-wrapper'>
+                  <img className='counter-btn minus' src={minus} alt='minus' />
+                  <span className='counter'>{control.counter}</span>
+                  <img className='counter-btn plus' src={plus} alt='plus' />
+                </div>
+                <div className='counter-name'>
+                  <span>{control.name}</span>
+                </div>
+              </div>
+            ))}
+          </>
+        )}
       </div>
+      {!loading && (
+        <button className='button-54' onClick={() => clearAll()}>
+          clear all
+        </button>
+      )}
     </div>
   );
 };

@@ -1,14 +1,22 @@
+import { Loader } from './index';
+
 const Prices = (props) => {
-  const { prices } = props;
+  const { prices, loading } = props;
 
   return (
     <div id='price-container'>
       <span className='price-header'>Price</span>
-      {prices?.map((item) => (
-        <span key={item.id} className='price-item'>
-          {item.name} : {item.price} $
-        </span>
-      ))}
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          {prices?.map((item) => (
+            <span key={item._id} className='price-item'>
+              {item.name} : {item.price} $
+            </span>
+          ))}
+        </>
+      )}
     </div>
   );
 };
