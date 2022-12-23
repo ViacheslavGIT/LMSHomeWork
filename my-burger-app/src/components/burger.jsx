@@ -23,7 +23,7 @@ const Burger = ({ ingredients, burgerState, active, setActive }) => {
   }, [ingredients]);
 
   useEffect(() => {
-    let sum = ingredients.reduce(function (total, amount) {
+    const sum = ingredients.reduce(function (total, amount) {
       if (amount.counter > 0) {
         return total + amount.counter * amount.price;
       }
