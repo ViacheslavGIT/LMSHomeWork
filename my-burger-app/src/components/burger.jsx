@@ -12,7 +12,6 @@ import pickle from '../assets/pickle.png';
 const Burger = ({ ingredients, burgerState, active, setActive }) => {
   const [ifIngredients, setIfIngredients] = useState(false);
   const [totalPrice, setTotalPrise] = useState(1);
-  
 
   useEffect(() => {
     const isIngredient = ingredients.find((el) => el.counter > 0);
@@ -78,8 +77,9 @@ const Burger = ({ ingredients, burgerState, active, setActive }) => {
           <img src={under} alt='under' />
         </span>
       </div>
-      <button className='button-54' onClick={()=>setActive(!active)}>CHECKOUT</button>
-      
+      <button className='button-54' onClick={() => setActive(!active)}>
+        CHECKOUT
+      </button>
     </div>
   );
 };

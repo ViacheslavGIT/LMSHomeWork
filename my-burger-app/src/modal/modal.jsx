@@ -20,11 +20,11 @@ const Modal = ({ active, setActive }) => {
           <input type='text' />
           <form action='#' method='post' id='contact_form'>
             <div className='name'>
-              <label for='name'></label>
+              <label htmlFor='name'></label>
               <input type='text' placeholder='My name is' name='name' id='name_input' required />
             </div>
             <div className='email'>
-              <label for='email'></label>
+              <label htmlFor='email'></label>
               <input
                 type='email'
                 placeholder='My e-mail is'
@@ -34,7 +34,7 @@ const Modal = ({ active, setActive }) => {
               />
             </div>
             <div className='telephone'>
-              <label for='name'></label>
+              <label htmlFor='name'></label>
               <input
                 type='text'
                 placeholder='My number is'
@@ -44,9 +44,9 @@ const Modal = ({ active, setActive }) => {
               />
             </div>
             <div className='subject'>
-              <label for='subject'></label>
+              <label htmlFor='subject'></label>
               <select placeholder='Subject line' name='subject' id='subject_input' required>
-                <option disabled hidden selected>
+                <option disabled hidden>
                   Subject line
                 </option>
                 <option>I'd like to start a project</option>
@@ -55,7 +55,7 @@ const Modal = ({ active, setActive }) => {
               </select>
             </div>
             <div className='message'>
-              <label for='message'></label>
+              <label htmlFor='message'></label>
               <textarea
                 name='message'
                 placeholder="I'd like to chat about"

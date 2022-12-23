@@ -5,38 +5,28 @@ import { Loader } from './index';
 const Controls = ({ controlsData, setIngredients, burgerState, setBurgerState, loading }) => {
   const handleCounter = (control, name) => {
     if (!control) return;
+    let copiedData = [...burgerState];
 
     const newData = controlsData.map((el) => {
       if (el.name === name) {
         if (control === 'plus' && el.counter < 5 && burgerState.length < 10) {
+          copiedData.unshift(name);
           return { ...el, counter: el.counter + 1 };
         } else if (control === 'minus' && el.counter > 0) {
+          const index = copiedData.indexOf(name);
+          if (index > -1) {
+            copiedData.splice(index, 1);
+          }
           return { ...el, counter: el.counter - 1 };
         }
       }
       return el;
     });
 
-    const updateBurgerState = () => {
-      let copiedData = [...burgerState];
-      const currentIngredient = newData.find((el) => el.name === name);
-
-      if (currentIngredient.counter !== 5 && control === 'plus' && burgerState.length < 10) {
-        console.log(currentIngredient.counter);
-        copiedData.unshift(name);
-        console.log(copiedData);
-      } else if (control === 'minus') {
-        const index = copiedData.indexOf(name);
-        if (index > -1) {
-          copiedData.splice(index, 1);
-        }
-      }
-      return copiedData;
-    };
-
-    setBurgerState(updateBurgerState());
+    setBurgerState(copiedData);
     setIngredients(newData);
   };
+
   const clearAll = () => {
     const clearData = controlsData.map((el) => {
       return { ...el, counter: 0 };

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import { Prices, Burger, Controls, Modal, Loader } from './index';
+import { Prices, Burger, Controls, Modal } from './index';
 
 const ContentPage = () => {
   const [prices, setPrices] = useState([]);
@@ -9,10 +9,6 @@ const ContentPage = () => {
   const [burgerState, setBurgerState] = useState([]);
   const [modalActive, setModalActive] = useState(false);
   const [loading, setLoading] = useState(false);
-
-useEffect(()=>{
-
-},[burgerState])
 
   useEffect(() => {
     async function getData() {
