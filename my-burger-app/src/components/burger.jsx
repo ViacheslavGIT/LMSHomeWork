@@ -1,17 +1,12 @@
 import { useState, useEffect } from 'react';
 
+import { IngredientIcon } from '../components';
+
 import up from '../assets/up.png';
 import under from '../assets/under.png';
-import tomato from '../assets/tomato.png';
-import salad from '../assets/salad.png';
-import cheese from '../assets/cheese.png';
-import meat from '../assets/meat.png';
-import onion from '../assets/onion.png';
-import pickle from '../assets/pickle.png';
 
-const Burger = ({ ingredients, burgerState, active, setActive }) => {
+const Burger = ({ ingredients, burgerState, active, setActive, totalPrice, setTotalPrise }) => {
   const [ifIngredients, setIfIngredients] = useState(false);
-  const [totalPrice, setTotalPrise] = useState(1);
 
   useEffect(() => {
     const isIngredient = ingredients.find((el) => el.counter > 0);
@@ -32,34 +27,11 @@ const Burger = ({ ingredients, burgerState, active, setActive }) => {
     setTotalPrise(sum.toFixed(2));
 
     return () => setTotalPrise(1);
-  }, [ingredients]);
+  }, [ingredients, setTotalPrise]);
 
   const renderIngredients = () => {
     return burgerState?.map((el) => {
-      let ingredientImg = '';
-      switch (el) {
-        case 'tomato':
-          ingredientImg = tomato;
-          break;
-        case 'cheese':
-          ingredientImg = cheese;
-          break;
-        case 'salad':
-          ingredientImg = salad;
-          break;
-        case 'meat':
-          ingredientImg = meat;
-          break;
-        case 'onion':
-          ingredientImg = onion;
-          break;
-        case 'pickle':
-          ingredientImg = pickle;
-          break;
-        default:
-          break;
-      }
-      return <img key={Math.random() + el} src={ingredientImg} alt={el} />;
+      return <IngredientIcon key={Math.random() + el} ingredient={el} />;
     });
   };
 
