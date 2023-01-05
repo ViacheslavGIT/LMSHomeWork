@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/LMShomeWork/static/css/main.ecab97fd.css",
-    "main.js": "/LMShomeWork/static/js/main.8079e521.js",
+    "main.css": "/LMShomeWork/static/css/main.4c131f2d.css",
+    "main.js": "/LMShomeWork/static/js/main.c6b1725a.js",
     "static/media/background.jpg": "/LMShomeWork/static/media/background.08c6a58b6080f2b469ac.jpg",
     "static/media/logo.png": "/LMShomeWork/static/media/logo.d0f0bce11cf58da94d00.png",
     "static/media/background-item.jpg": "/LMShomeWork/static/media/background-item.a3249c0787a330ec77cd.jpg",
@@ -15,11 +15,11 @@
     "index.html": "/LMShomeWork/index.html",
     "static/media/plus_circle.svg": "/LMShomeWork/static/media/plus_circle.e30502693cc53340053a5be65475a604.svg",
     "static/media/minus_circle.svg": "/LMShomeWork/static/media/minus_circle.0aefc02394a867745ae3aff3da4273d9.svg",
-    "main.ecab97fd.css.map": "/LMShomeWork/static/css/main.ecab97fd.css.map",
-    "main.8079e521.js.map": "/LMShomeWork/static/js/main.8079e521.js.map"
+    "main.4c131f2d.css.map": "/LMShomeWork/static/css/main.4c131f2d.css.map",
+    "main.c6b1725a.js.map": "/LMShomeWork/static/js/main.c6b1725a.js.map"
   },
   "entrypoints": [
-    "static/css/main.ecab97fd.css",
-    "static/js/main.8079e521.js"
+    "static/css/main.4c131f2d.css",
+    "static/js/main.c6b1725a.js"
   ]
 }
