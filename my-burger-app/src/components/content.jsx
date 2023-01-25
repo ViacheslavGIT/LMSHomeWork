@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 
 import { Prices, Burger, Controls, Modal, OrderForm } from './index';
+import { getIngredients } from '../api';
 
 const defaulArrayData = [];
 
@@ -24,8 +24,8 @@ const ContentPage = () => {
     async function getData() {
       try {
         setLoading(true);
-        const response = await axios.get('https://burger-api-xcwp.onrender.com/ingredients');
-        const updatedData = response.data.map((el) => ({ ...el, counter: 0 }));
+        const response = await getIngredients();
+        const updatedData = response.map((el) => ({ ...el, counter: 0 }));
         setPrices(updatedData);
         setIngredients(updatedData);
         setLoading(false);

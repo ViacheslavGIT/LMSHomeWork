@@ -33,9 +33,10 @@ body {
   font-weight: 700;
 }
 .header-item:hover {
+  color: #000;
   text-shadow: 0px 0px 2px rgb(68, 68, 68);
   cursor: pointer;
-  border-bottom: 4px solid black;
+  border-bottom: 2px solid black;
 }
 
 .price-header {
@@ -193,6 +194,7 @@ body {
 }
 
 .burger-view {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;

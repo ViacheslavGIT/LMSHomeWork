@@ -1,0 +1,19 @@
+.orders-wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  grid-auto-rows: minmax(auto, 300px);
+}
+.yourOrders-list {
+  border-radius: 20px;
+  background-image: url(../../assets/background-item.jpg);
+  background-size: cover;
+  height: 100%;
+  list-style: none;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-inline-start: 0;
+  justify-content: space-around;
+}
