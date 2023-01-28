@@ -7,3 +7,4 @@ export { default as Modal } from '../modal/modal';
 export { default as Loader } from '../loader/loader';
 export {default as IngredientIcon} from './ingredientIcon';
 export {default as OrderForm} from './orderForm';
+export{default as MyGoogleMaps} from '../map/googleMap'

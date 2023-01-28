@@ -43,7 +43,7 @@ const Burger = ({ ingredients, burgerState, active, setActive, totalPrice, setTo
           <img src={up} alt='up' />
         </span>
         <div className='ingredients-container'>
-          {ifIngredients ? renderIngredients() : <div>Please start by adding products...</div>}
+          {ifIngredients ? renderIngredients() : <div>Please add products...</div>}
         </div>
         <span>
           <img src={under} alt='under' />

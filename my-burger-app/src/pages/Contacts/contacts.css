@@ -1,26 +1,35 @@
 .contacts-list {
-  background-image: url(../../assets/background-item.jpg);
-  background-size: cover;
-  height: 800px;
+  height: 325px;
   list-style: none;
-  border-radius: 20px;
+padding: 0;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 50px;
+  font-size: 12px;
 }
 .contact-item {
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 40px;
+  align-items: center;
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+.contact-item:hover {  box-shadow: rgba(0, 0, 0, 0.20) 1px 1px 2px;
+
+
+
 }
 .locations {
   display: flex;
   flex-direction: column;
 }
 .contact-logo {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
 }
 .location-logo{
 width: 100px;

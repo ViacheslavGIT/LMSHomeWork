@@ -3,12 +3,12 @@ import { useState, useEffect } from 'react';
 import { Prices, Burger, Controls, Modal, OrderForm } from './index';
 import { getIngredients } from '../api';
 
-const defaulArrayData = [];
+const defaultArrayData = [];
 
 const ContentPage = () => {
-  const [prices, setPrices] = useState(defaulArrayData);
-  const [ingredients, setIngredients] = useState(defaulArrayData);
-  const [burgerState, setBurgerState] = useState(defaulArrayData);
+  const [prices, setPrices] = useState(defaultArrayData);
+  const [ingredients, setIngredients] = useState(defaultArrayData);
+  const [burgerState, setBurgerState] = useState(defaultArrayData);
   const [successActive, setSuccessActive] = useState(false);
   const [modalActive, setModalActive] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -77,7 +77,7 @@ const ContentPage = () => {
               setShowOrderError={setShowOrderError}
             />
           ) : (
-            <div>Please start by adding products...</div>
+            <div>Please add products...</div>
           )}
         </Modal>
       )}
