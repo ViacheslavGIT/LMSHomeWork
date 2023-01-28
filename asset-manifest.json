@@ -1,25 +1,28 @@
 {
   "files": {
-    "main.css": "/LMShomeWork/static/css/main.4c131f2d.css",
-    "main.js": "/LMShomeWork/static/js/main.c6b1725a.js",
-    "static/media/background.jpg": "/LMShomeWork/static/media/background.08c6a58b6080f2b469ac.jpg",
+    "main.css": "/LMShomeWork/static/css/main.42fbbcd9.css",
+    "main.js": "/LMShomeWork/static/js/main.2a179cab.js",
     "static/media/logo.png": "/LMShomeWork/static/media/logo.d0f0bce11cf58da94d00.png",
-    "static/media/background-item.jpg": "/LMShomeWork/static/media/background-item.a3249c0787a330ec77cd.jpg",
     "static/media/tomato.png": "/LMShomeWork/static/media/tomato.9a424ff98350405486ba.png",
+    "static/media/instagram-logo.png": "/LMShomeWork/static/media/instagram-logo.ac32ec0a111aeba03298.png",
     "static/media/meat.png": "/LMShomeWork/static/media/meat.3d78b0430b8d32e2cf08.png",
     "static/media/salad.png": "/LMShomeWork/static/media/salad.2c60eb4a0f089b4f069e.png",
+    "static/media/worktime-logo.png": "/LMShomeWork/static/media/worktime-logo.3efe81b3c87ff70b1ca8.png",
+    "static/media/location-logo.png": "/LMShomeWork/static/media/location-logo.0383ee63a5dbf352ba24.png",
     "static/media/up.png": "/LMShomeWork/static/media/up.a6ea117a716dc73f2b83.png",
+    "static/media/email-logo.png": "/LMShomeWork/static/media/email-logo.970c3922700d4639a607.png",
     "static/media/onion.png": "/LMShomeWork/static/media/onion.7b0c04cebf06a3c51614.png",
+    "static/media/facebook-logo.png": "/LMShomeWork/static/media/facebook-logo.8d51a55626e9bf107f8f.png",
     "static/media/under.png": "/LMShomeWork/static/media/under.b39af441c8ac839e260d.png",
     "static/media/pickle.png": "/LMShomeWork/static/media/pickle.6eb155555a63915da792.png",
     "index.html": "/LMShomeWork/index.html",
     "static/media/plus_circle.svg": "/LMShomeWork/static/media/plus_circle.e30502693cc53340053a5be65475a604.svg",
     "static/media/minus_circle.svg": "/LMShomeWork/static/media/minus_circle.0aefc02394a867745ae3aff3da4273d9.svg",
-    "main.4c131f2d.css.map": "/LMShomeWork/static/css/main.4c131f2d.css.map",
-    "main.c6b1725a.js.map": "/LMShomeWork/static/js/main.c6b1725a.js.map"
+    "main.42fbbcd9.css.map": "/LMShomeWork/static/css/main.42fbbcd9.css.map",
+    "main.2a179cab.js.map": "/LMShomeWork/static/js/main.2a179cab.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c131f2d.css",
-    "static/js/main.c6b1725a.js"
+    "static/css/main.42fbbcd9.css",
+    "static/js/main.2a179cab.js"
   ]
 }
