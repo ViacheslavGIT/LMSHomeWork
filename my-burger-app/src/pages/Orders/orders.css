@@ -1,0 +1,28 @@
+.orders-wrapper {
+  display: grid;
+  margin-top: 7px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  grid-auto-rows: minmax(auto, 130px);
+}
+.order-number{
+  font-size: 16px;
+}
+.yourOrders-list {
+  padding: 5px;
+  border-radius: 4px;
+  background-color: bisque; 
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  list-style: none;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.red-order-item{
+  color: rgb(161, 70, 70);;
+  font-size: 13px;
+  margin-right: 4px;
+}
